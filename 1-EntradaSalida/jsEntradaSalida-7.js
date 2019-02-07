@@ -4,21 +4,37 @@ mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
 function sumar()
 {	
-	
+	var numUno = parseInt(document.getElementById("numeroUno").value);
+    var numDos = parseInt(document.getElementById("numeroDos").value);
+    var resultado = numUno + numDos;
+    
+    alert ("La suma es "+ resultado);
 }
 
 function restar()
 {
-	
+	var numUno = parseInt(document.getElementById("numeroUno").value);
+    var numDos = parseInt(document.getElementById("numeroDos").value);
+    var resultado = numUno - numDos;
+    
+    alert ("La resta es "+ resultado);
 }
 
 function multiplicar()
 { 
-	
+	var numUno = parseInt(document.getElementById("numeroUno").value);
+    var numDos = parseInt(document.getElementById("numeroDos").value);
+    var resultado = numUno * numDos;
+    
+    alert ("La potencia es "+ resultado);
 }
 
 function dividir()
 {
-	
+	var numUno = parseInt(document.getElementById("numeroUno").value);
+    var numDos = parseInt(document.getElementById("numeroDos").value);
+    var resultado = numUno / numDos;
+    
+    alert ("La division es "+ resultado);
 }
 
