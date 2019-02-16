@@ -1,18 +1,36 @@
 function mostrar()
-/*Pedir por prompt el precio y el porcentaje de descuento, mostrar: 1-el descuento en dinero, 2-el
-precio con el descuento ,3-el IVA , todos los anteriores e un solo alert. 4-y solo el precio con descuento
-más el IVA por id .*/ 
+/*En un restaurante un grupo de amigos quiere saber cuanto debe abonar cada uno, teniendo en cuenta que ademas 
+de la cuenta abonan un 10% de propina y que el iva no esta incluido en el precio*/ 
 {
-    var precio =parseInt(prompt("Ingrese el precio")); 
-    var descuento =parseInt(prompt("Ingrese el porcentaje del descuento"));
-    var descuentoDinero = parseInt((precio * descuento)/100);
-    var iva= parseInt(precio*0.21);
-    var precioFinal = (precio - (precio * descuento/100));
-    var descIva= (precioFinal+iva);
+    var cuenta;
+    var cantidadPersonas;
+    var cuentaConPropina;
+    var cuentaConIva;
+    var cuentaFinal;
 
+    cuenta = prompt("Ingrese el monto de la cuenta");
+    cantidadPersonas = prompt ("Ingrese la cantidad de personas");
+
+    cuenta= parseFloat (cuenta);
+    cantidadPersonas = parseInt (cantidadPersonas);
+    cuentaConPropina = parseFloat (cuentaConPropina);
+    cuentaconIva = parseFloat (cuentaConPropina);
+    cuentaFinal = parseFloat (cuentaFinal)
     
-    alert("El descuento en dinero es "+descuentoDinero+", el precio con el descuento es "+precioFinal+", el iva es de "+
-    iva);
-    
-    document.getElementById("elPrecioFinal").value=descIva;
+    cuentaConPropina = cuenta + (cuenta *0.10);
+    cuentaConIva =  cuentaConPropina + (cuentaConPropina * 0.21)
+
+    cuentaFinal = cuentaConIva / cantidadPersonas;
+
+ 
+
+    alert("Gastaron $"+cuenta+" , con el 10% de propina es "+cuentaConPropina+" , mas el iva es de $"+ cuentaConIva+
+    " , cada uno debe pagar $"+cuentaFinal);
+
+
+   
+
+
+
+
 }
