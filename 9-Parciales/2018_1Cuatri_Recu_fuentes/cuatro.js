@@ -7,27 +7,34 @@ function mostrar()
     {
     var cantidadLibros;
     var valorCompra;
-    
+    var descuento;
+    var metodoPago;
+    //son 3 posibilidades o a) lleva mas de 2 libros o compra +2000 o paga con tajeta
 
     cantidadLibros = prompt ("Ingrese la cantidad de libros comprados");
     valorCompra = prompt ("Ingrese el valor de la compra"); //aca lo que ingresamos es un string, ya que lo toma por prompt
-    
+    metodoPago= prompt ("Ingrese medio de pago, si paga con tarjeta escriba : tarjeta")
+    descuento = 0;
 
     cantidadLibros = parseInt(cantidadLibros);
     valorCompra = parseFloat (valorCompra);
-    
+    descuento= parseInt(descuento);
 
-    if(cantidadLibros >= 2 && valorCompra <= 2000)
-    {
+    if (cantidadLibros > 2 )
+    { descuento =descuento+10
 
-    valorCompra = valorCompra - (valorCompra * 0.10);
-    }else
-    {
-    if(cantidadLibros > 2 && valorCompra > 2000)
-    {
+
     }
-    
+   
+    if (valorCompra > 2000)
+    {
+    descuento =descuento+15
+    } 
+    if(metodoPago = "tarjeta"){
+        descuento =descuento+10
+    }
 
-    alert("Llevas "+cantidadLibros+ "libros, tu compra es de "+valorCompra);
+    alert(descuento)
+    //alert("Llevas "+cantidadLibros+ "libros, tu compra es de "+(valorCompra-valorCompra*descuento/100));
 
     }
