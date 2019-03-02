@@ -15,41 +15,36 @@ function mostrar()
     var tipoCombustible;
     var tipoCombustibleMasBajo;
     var velocidadMasBaja;
+
+    velocidadMasBaja = parseInt(velocidadMasBaja);
+    
     totalVelocidades = 0;
     pruebas = 0;
-    velocidadMasBaja = 0;
+    velocidadMasBaja = 251;
+    velocidadIngresada = 0;
 
 
-
-    while(pruebas <5)
-    {
-        
-    velocidadIngresada = prompt ("Ingrese la velocidad del vehiculo, debe ser entre 0 y 250");
-    if(velocidadIngresada >= 0 || velocidadIngresada <= 250)
-    
-    {
-        totalVelocidades = parseInt(totalVelocidades) + parseInt(velocidadIngresada);
-    
-    }
-    else {
+    do{
         velocidadIngresada = prompt ("Ingrese la velocidad del vehiculo, debe ser entre 0 y 250");
+        tipoCombustible = prompt ("Ingrese el tipo de combustible del vehiculo, L o S")
+        totalVelocidades = parseInt(totalVelocidades) + parseInt(velocidadIngresada)
+        console.log(velocidadIngresada)
+    if (velocidadIngresada < velocidadMasBaja)
+    {
+        velocidadMasBaja = velocidadIngresada
+        tipoCombustibleMasBajo = tipoCombustible
+    } else{
         
     }
-    tipoCombustible = prompt ("Ingrese el tipo de combustible, siendo S para solido y L para liquido")
 
-    //console.log (velocidadIngresada)
-     if(velocidadIngresada < velocidadMasBaja || pruebas == 0){
-         velocidadMasBaja = velocidadIngresada;
-         tipoCombustibleMasBajo = tipoCombustible;
+        pruebas ++;
+    } while(pruebas < 5)
+    alert("El promedio de la velocidad es de "+(totalVelocidades/5))
+    alert(velocidadMasBaja)
+   
+        
+        
     }
-    
-    pruebas++;
-    }
-    
-    //tipoCombustible = prompt("Ingrese el tipo de combustible siendo L para liquido y S para solido"); 
-    
-    alert ("El promedio de las velocidad es  = "+ (totalVelocidades/5))
-    alert ("La velocidad mas baja es   = "+ velocidadMasBaja)
-}
+
     
 
